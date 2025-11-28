@@ -1,0 +1,295 @@
+# default pathes  
+
+CMAKEPATH="C:\Program Files\CMake\bin"
+STM32CUBEIDEPATH="C:\ST\STM32CubeIDE_1.18.0.25A7"
+GCCPATH="$STM32CUBEIDEPATH\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\bin"
+TOOLPATH="$STM32CUBEIDEPATH\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.make.win32_2.2.0.202409170845\tools\bin"
+
+export PATH=$CMAKEPATH:$GCCPATH:$TOOLPATH:$PATH
+
+COLOR_RED='\e[1m\e[4m\e[31m'
+COLOR_NC='\033[0m'
+COLOR_BLUE='\033[0;34m'
+COLOR_YELLOW='\033[1;33m'
+COLOR_GREEN='\e[1m\033[1;32m'
+
+listCfg=(\
+	"libCMSISDSP_cortex-m55_FFTmax2048" \
+	"libCMSISDSP_cortex-m55_FFTmax1024" \
+	"libCMSISDSP_cortex-m55_FFTmax256"  \
+	"libCMSISDSP_cortex-m55_FFTmax512" \
+	"libCMSISDSP_cortex-m55_FFTmax128"  \
+	"libCMSISDSP_cortex-m55_full"      \
+	"libCMSISDSP_cortex-m33_FFTmax1024" \
+	"libCMSISDSP_cortex-m33_FFTmax128"  \
+	"libCMSISDSP_cortex-m33_FFTmax2048" \
+	"libCMSISDSP_cortex-m33_FFTmax256" \
+	"libCMSISDSP_cortex-m33_FFTmax512" \
+	"libCMSISDSP_cortex-m33_full"      \
+	"libCMSISDSP_cortex-m4_FFTmax1024" \
+	"libCMSISDSP_cortex-m4_FFTmax128"  \
+	"libCMSISDSP_cortex-m4_FFTmax2048" \
+	"libCMSISDSP_cortex-m4_FFTmax256"  \
+	"libCMSISDSP_cortex-m4_FFTmax512"  \
+	"libCMSISDSP_cortex-m4_full"       \
+	"libCMSISDSP_cortex-m7_FFTmax1024" \
+	"libCMSISDSP_cortex-m7_FFTmax128"  \
+	"libCMSISDSP_cortex-m7_FFTmax2048" \
+	"libCMSISDSP_cortex-m7_FFTmax256"  \
+	"libCMSISDSP_cortex-m7_FFTmax512"  \
+	"libCMSISDSP_cortex-m7_full"       \
+)
+
+
+function checkKey 
+{
+	for i in "${listKey[@]}"
+	do
+		if [ "$i" == "$1" ] ; then
+			echo "1"
+			return
+		fi
+	done	
+	echo "0"
+
+}
+
+function waitType
+{
+	val_waitType=""
+	IFS=':' read -ra listKey <<< "$1"
+	string=""
+	while [ $(checkKey "$string") == "0" ]
+	
+	do
+		if [ "$string" == "quit" ] ; then
+			exit 
+		fi
+	
+		if [ "$3" != "" ] ;
+		then
+			read -t $2 -p "$2  or wait $3 seconds > "  string
+			if [ "$?" -gt "128" ] ;
+			then 
+			 string=$1
+			 echo -n $string
+			fi
+		else
+			read   -p "$2"  string
+			if [ "$string" == "" ]; then
+				if [ "$4" != "" ]; then
+					string=$4
+				fi
+			fi
+			 
+		fi
+	done
+   export val_waitType=$string
+}
+ 
+
+
+function checkDir
+{
+if [ ! -d "$1" ]; then
+	echo -e $COLOR_RED "path $1 not found,please fix it "  $COLOR_NC
+	read
+	return
+fi	
+}
+
+function check_tool
+{
+export TOOL=$(type -P -a $1 | head -n 1 2>/dev/null)
+	while [ "$TOOL" == "" ]; do
+		>&2 echo "----------------------------------------"
+		>&2 echo -e $COLOR_RED $2 $COLOR_NC
+		>&2 echo -e $COLOR_RED Please, quit the script$COLOR_NC
+		>&2 echo -e $COLOR_RED Fix the issue and try again$COLOR_NC
+		>&2 echo -e $COLOR_YELLOW Fix the variable GCCPATH with the path doing a search of *gcc* inside the folder given by the STM32CUBEIDEPATH variable $COLOR_NC
+		>&2 echo -e $COLOR_YELLOW Fix the variable TOOLPATH with the path doing a search of make inside the folder given by the STM32CUBEIDEPATH variable $COLOR_NC
+		>&2 echo "----------------------------------------"
+		read
+	done
+}
+
+# Execute a command line with echo replication & Check error 
+function run
+{
+	echo -e $COLOR_YELLOW "$1" $COLOR_NC
+	eval "$1"
+	if [[ $? != 0 ]]; then
+		echo -e $COLOR_RED" Failure: return $?"$COLOR_NC
+		read
+		exit -1
+	fi
+}
+
+function buildLib
+{
+	# Extract CPU and  build type 
+	cfgFile="$1"
+
+	fname=$(basename $cfgFile)
+	echo -e  $COLOR_YELLOW "Build $fname" $COLOR_NC
+	CPU=$(echo $fname | cut -d "_" -f2)
+	FFTMAX="$(echo $fname | cut -d "_" -f3)"
+
+	libNameGCC=libs/GCC/libCMSISDSP_${CPU}_${FFTMAX}
+	libIAR=libs/IAR
+
+	echo -e $COLOR_YELLOW "CPU    :"$CPU $COLOR_NC 
+	echo -e $COLOR_YELLOW "BUILD  :"$FFTMAX $COLOR_NC 
+	echo -e $COLOR_YELLOW "LIB    :"libCMSISDSP_${CPU}_${FFTMAX} $COLOR_NC 
+
+	# Cleanup the tmp folder before re-generation from scratch 
+
+	rm -rf CMakeCache.txt &>/dev/null
+	rm -rf CMakeFiles &>/dev/null
+	rm -rf bin &>/dev/null
+
+	# Build the make file 
+
+	absolutPathRoot=$(realpath -s ../../../)	# root needs an absolut path 
+	
+	# Integrate the Library  presets 
+	
+	C_MATH_FFTMAX=""
+	C_CPU_PRESET=""
+	C_MATH_COMMON=""
+	
+	filePreset=../Lib/presets/preset.${CPU}
+	if [ -f "$filePreset" ]; then
+		C_CPU_PRESET=$(cat "$filePreset")
+	fi
+	
+	filePreset=../Lib/presets/preset.common
+	if [ -f "$filePreset" ]; then
+		C_MATH_COMMON=$(cat "$filePreset")
+	fi
+
+	filePreset=../Lib/presets/preset.${FFTMAX}
+	if [ -f "$filePreset" ]; then
+		C_MATH_FFTMAX=$(cat "$filePreset")
+	fi
+	# Generate  makefiles using presets 
+	
+	C_MATH_PRESET="$C_MATH_COMMON $C_MATH_FFTMAX"
+	
+	echo $C_MATH_PRESET
+	
+	
+	#--trace-expand
+	run "cmake  \
+		 $C_MATH_PRESET \
+		 $C_CPU_PRESET \
+		-DCMAKE_TOOLCHAIN_FILE=\"../lib/presets/configs/gcc.cmake\" \
+		-DARM_CPU=\"$CPU\" \
+		-DROOT=\"$absolutPathRoot\" \
+		-G \"Unix Makefiles\" ."
+	# Make (optionaly) VERBOSE=1 to see the command line 
+	let nbCpu=$NUMBER_OF_PROCESSORS/2	
+	echo -e $COLOR_YELLOW using $nbCpu CPU  $COLOR_NC
+	run "make -j $nbCpu"
+
+	# Build a single file  from libraries generated by the build  
+
+	libs=($(find  ./bin  -name  "*.a"))
+	
+	# Create the AR master file 
+	
+	echo create ${libNameGCC}.a > list.mri
+	for i in "${libs[@]}" 
+	do
+		echo addlib $i >> list.mri
+	done
+	echo save >> list.mri
+	echo end >> list.mri
+
+	# Execute the AR aster file that merge libraries 
+	
+	run "arm-none-eabi-gcc-ar.exe -M < list.mri"
+
+	# Create the CFG file 
+	# Useless, but could be usefull to compare build.sh vs rebuild.sh
+	# Add equivalent to cfg C_DEFINES
+
+	value=$(grep -C0 C_DEFINES ./bin/CommonTables/CMakeFiles/CMSISDSPCommon.dir/flags.make)
+	listValue=(${value:11})
+	echo -n "C_DEFINES = " > ${libNameGCC}.cfg
+	for i in ${listValue[@]}
+		do
+		echo "            $i" >>${libNameGCC}.cfg
+	done
+
+	# Useless, but could be usefull to to compare build.sh vs rebuild.sh
+	# Add equivalent to cfg C_FLAGS
+
+	value=$(grep -C0 C_FLAGS ./bin/CommonTables/CMakeFiles/CMSISDSPCommon.dir/flags.make)
+	listValue=(${value:10})
+	echo -n "C_FLAGS = " >> ${libNameGCC}.cfg
+	for i in ${listValue[@]}
+		do
+		echo "            $i" >>${libNameGCC}.cfg
+	done
+
+	# Add  usefull info to keep a trace of  CMake options compiled (mandatory to rebuild the same version from cmake)
+
+	echo "C_MATH_PRESET = $MATH_PRESET" >> ${libNameGCC}.cfg
+	echo "C_CPU_PRESET  = $CPU_PRESET"  >> ${libNameGCC}.cfg
+
+	# Same  lib for IAR 
+
+	run "cp -f $libNameGCC.* $libIAR"
+
+}
+
+function Regen_libs
+{
+	pushd $PWD
+
+	# Check tool pathes 
+	
+	
+	check_tool  "cmake.exe" "Need cmake.exe to build libraries, please fix the pathes"
+	check_tool  "make.exe" "Need make.exe to build libraries, please fix the pathes"
+	check_tool  "arm-none-eabi-gcc.exe" "Need arm-none-eabi-gcc to build libraries, please fix the pathes"
+	check_tool  "arm-none-eabi-ar.exe" "Need arm-none-eabi-ar to build libraries , please fix the pathes"
+	check_tool  "arm-none-eabi-ld.exe" "Need arm-none-eabi-ld to build libraries, please fix the pathes"
+
+
+	# Cleanup the main tmp folder 
+
+	cd ..
+	rm -rf BuildDSPOnly #&>/dev/null
+	mkdir BuildDSPOnly
+	cp -f lib/presets/CMakeLists.txt   BuildDSPOnly
+	cd  BuildDSPOnly
+	
+	# create tmp libs folders 
+	rm -rf libs           &>/dev/null
+	mkdir -p "libs/GCC"   &>/dev/null
+	mkdir -p "libs/IAR"   &>/dev/null
+
+	echo ---------------------------------------
+	echo -  Rebuild all DSP libs in the folder ../BuildDSPOnly/libs
+	echo ---------------------------------------
+	
+	# Build all libs in the list
+	for i in "${listCfg[@]}"
+	do
+		buildLib "../Lib/GCC/$i"
+	done
+	waitType "yes:no" "Copy the result in dsp/lib? (Yes/no)> " "" "yes"
+	if [ "$val_waitType" == "yes" ]; then
+		cp -rfv ./libs/* ../lib
+	fi
+	popd
+}
+
+Regen_libs
+echo finished, hit a key
+read
+
+
+

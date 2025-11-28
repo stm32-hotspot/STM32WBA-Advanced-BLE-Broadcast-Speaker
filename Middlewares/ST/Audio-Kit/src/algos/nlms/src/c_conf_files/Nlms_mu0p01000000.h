@@ -1,0 +1,9 @@
+#ifndef __NLMS_MU0P01000000_H
+#define __NLMS_MU0P01000000_H
+
+#ifdef USE_NLMS_MU0P01000000
+  #define NLMS_NUMTAPS 256
+  #define NLMS_MU 0.01
+#endif /* USE_NLMS_MU0P01000000 */
+
+#endif  /* __NLMS_MU0P01000000_H */

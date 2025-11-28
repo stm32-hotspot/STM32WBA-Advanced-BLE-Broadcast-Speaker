@@ -1,0 +1,9 @@
+intelhex
+args
+colorama
+numpy
+
+
+
+
+

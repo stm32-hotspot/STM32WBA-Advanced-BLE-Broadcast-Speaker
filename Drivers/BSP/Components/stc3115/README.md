@@ -1,0 +1,3 @@
+# This driver is unavailable in this repository
+
+In this repository, this driver **not available**. Please refer to the [README.md](../../../../README.md#some-middleware-libraries-and-drivers-are-unavailable-in-this-repository) file at the root of this repository for further details.

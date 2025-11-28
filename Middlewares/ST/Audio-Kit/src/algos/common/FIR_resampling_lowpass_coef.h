@@ -1,0 +1,171 @@
+#ifndef __FIR_RESAMPLING_LOWPASS_COEF_H
+#define __FIR_RESAMPLING_LOWPASS_COEF_H
+
+#include "fir_config.h"
+
+
+
+#ifdef AC_SUPPORT_RATIO_2
+  extern const firCoeffFloat_t FIR_ParksMcClellan_resampling_ratio2_firFloat;
+  extern const firCoeffInt32_t FIR_ParksMcClellan_resampling_ratio2_firInt32;
+  extern const firCoeffInt16_t FIR_ParksMcClellan_resampling_ratio2_firInt16;
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO2_FIR_FLOAT &FIR_ParksMcClellan_resampling_ratio2_firFloat
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO2_FIR_INT32 &FIR_ParksMcClellan_resampling_ratio2_firInt32
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO2_FIR_INT16 &FIR_ParksMcClellan_resampling_ratio2_firInt16
+
+  extern const firCoeffFloat_t FIR_KaiserWindow_resampling_ratio2_firFloat;
+  extern const firCoeffInt32_t FIR_KaiserWindow_resampling_ratio2_firInt32;
+  extern const firCoeffInt16_t FIR_KaiserWindow_resampling_ratio2_firInt16;
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO2_FIR_FLOAT &FIR_KaiserWindow_resampling_ratio2_firFloat
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO2_FIR_INT32 &FIR_KaiserWindow_resampling_ratio2_firInt32
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO2_FIR_INT16 &FIR_KaiserWindow_resampling_ratio2_firInt16
+
+#else /* AC_SUPPORT_RATIO_2 */
+
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO2_FIR_FLOAT NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO2_FIR_INT32 NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO2_FIR_INT16 NULL
+
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO2_FIR_FLOAT NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO2_FIR_INT32 NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO2_FIR_INT16 NULL
+
+#endif /* AC_SUPPORT_RATIO_2 */
+
+#ifdef AC_SUPPORT_RATIO_3
+  extern const firCoeffFloat_t FIR_ParksMcClellan_resampling_ratio3_firFloat;
+  extern const firCoeffInt32_t FIR_ParksMcClellan_resampling_ratio3_firInt32;
+  extern const firCoeffInt16_t FIR_ParksMcClellan_resampling_ratio3_firInt16;
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO3_FIR_FLOAT &FIR_ParksMcClellan_resampling_ratio3_firFloat
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO3_FIR_INT32 &FIR_ParksMcClellan_resampling_ratio3_firInt32
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO3_FIR_INT16 &FIR_ParksMcClellan_resampling_ratio3_firInt16
+
+  extern const firCoeffFloat_t FIR_KaiserWindow_resampling_ratio3_firFloat;
+  extern const firCoeffInt32_t FIR_KaiserWindow_resampling_ratio3_firInt32;
+  extern const firCoeffInt16_t FIR_KaiserWindow_resampling_ratio3_firInt16;
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO3_FIR_FLOAT &FIR_KaiserWindow_resampling_ratio3_firFloat
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO3_FIR_INT32 &FIR_KaiserWindow_resampling_ratio3_firInt32
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO3_FIR_INT16 &FIR_KaiserWindow_resampling_ratio3_firInt16
+
+#else /* AC_SUPPORT_RATIO_3 */
+
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO3_FIR_FLOAT NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO3_FIR_INT32 NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO3_FIR_INT16 NULL
+
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO3_FIR_FLOAT NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO3_FIR_INT32 NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO3_FIR_INT16 NULL
+
+#endif /* AC_SUPPORT_RATIO_3 */
+
+#ifdef AC_SUPPORT_RATIO_4
+  extern const firCoeffFloat_t FIR_ParksMcClellan_resampling_ratio4_firFloat;
+  extern const firCoeffInt32_t FIR_ParksMcClellan_resampling_ratio4_firInt32;
+  extern const firCoeffInt16_t FIR_ParksMcClellan_resampling_ratio4_firInt16;
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO4_FIR_FLOAT &FIR_ParksMcClellan_resampling_ratio4_firFloat
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO4_FIR_INT32 &FIR_ParksMcClellan_resampling_ratio4_firInt32
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO4_FIR_INT16 &FIR_ParksMcClellan_resampling_ratio4_firInt16
+
+  extern const firCoeffFloat_t FIR_KaiserWindow_resampling_ratio4_firFloat;
+  extern const firCoeffInt32_t FIR_KaiserWindow_resampling_ratio4_firInt32;
+  extern const firCoeffInt16_t FIR_KaiserWindow_resampling_ratio4_firInt16;
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO4_FIR_FLOAT &FIR_KaiserWindow_resampling_ratio4_firFloat
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO4_FIR_INT32 &FIR_KaiserWindow_resampling_ratio4_firInt32
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO4_FIR_INT16 &FIR_KaiserWindow_resampling_ratio4_firInt16
+
+#else /* AC_SUPPORT_RATIO_4 */
+
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO4_FIR_FLOAT NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO4_FIR_INT32 NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO4_FIR_INT16 NULL
+
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO4_FIR_FLOAT NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO4_FIR_INT32 NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO4_FIR_INT16 NULL
+
+#endif /* AC_SUPPORT_RATIO_4 */
+
+#ifdef AC_SUPPORT_RATIO_6
+  extern const firCoeffFloat_t FIR_ParksMcClellan_resampling_ratio6_firFloat;
+  extern const firCoeffInt32_t FIR_ParksMcClellan_resampling_ratio6_firInt32;
+  extern const firCoeffInt16_t FIR_ParksMcClellan_resampling_ratio6_firInt16;
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO6_FIR_FLOAT &FIR_ParksMcClellan_resampling_ratio6_firFloat
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO6_FIR_INT32 &FIR_ParksMcClellan_resampling_ratio6_firInt32
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO6_FIR_INT16 &FIR_ParksMcClellan_resampling_ratio6_firInt16
+
+  extern const firCoeffFloat_t FIR_KaiserWindow_resampling_ratio6_firFloat;
+  extern const firCoeffInt32_t FIR_KaiserWindow_resampling_ratio6_firInt32;
+  extern const firCoeffInt16_t FIR_KaiserWindow_resampling_ratio6_firInt16;
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO6_FIR_FLOAT &FIR_KaiserWindow_resampling_ratio6_firFloat
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO6_FIR_INT32 &FIR_KaiserWindow_resampling_ratio6_firInt32
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO6_FIR_INT16 &FIR_KaiserWindow_resampling_ratio6_firInt16
+
+#else /* AC_SUPPORT_RATIO_6 */
+
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO6_FIR_FLOAT NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO6_FIR_INT32 NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO6_FIR_INT16 NULL
+
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO6_FIR_FLOAT NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO6_FIR_INT32 NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO6_FIR_INT16 NULL
+
+#endif /* AC_SUPPORT_RATIO_6 */
+
+#ifdef AC_SUPPORT_RATIO_8
+  extern const firCoeffFloat_t FIR_ParksMcClellan_resampling_ratio8_firFloat;
+  extern const firCoeffInt32_t FIR_ParksMcClellan_resampling_ratio8_firInt32;
+  extern const firCoeffInt16_t FIR_ParksMcClellan_resampling_ratio8_firInt16;
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO8_FIR_FLOAT &FIR_ParksMcClellan_resampling_ratio8_firFloat
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO8_FIR_INT32 &FIR_ParksMcClellan_resampling_ratio8_firInt32
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO8_FIR_INT16 &FIR_ParksMcClellan_resampling_ratio8_firInt16
+
+  extern const firCoeffFloat_t FIR_KaiserWindow_resampling_ratio8_firFloat;
+  extern const firCoeffInt32_t FIR_KaiserWindow_resampling_ratio8_firInt32;
+  extern const firCoeffInt16_t FIR_KaiserWindow_resampling_ratio8_firInt16;
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO8_FIR_FLOAT &FIR_KaiserWindow_resampling_ratio8_firFloat
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO8_FIR_INT32 &FIR_KaiserWindow_resampling_ratio8_firInt32
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO8_FIR_INT16 &FIR_KaiserWindow_resampling_ratio8_firInt16
+
+#else /* AC_SUPPORT_RATIO_8 */
+
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO8_FIR_FLOAT NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO8_FIR_INT32 NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO8_FIR_INT16 NULL
+
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO8_FIR_FLOAT NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO8_FIR_INT32 NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO8_FIR_INT16 NULL
+
+#endif /* AC_SUPPORT_RATIO_8 */
+
+#ifdef AC_SUPPORT_RATIO_12
+  extern const firCoeffFloat_t FIR_ParksMcClellan_resampling_ratio12_firFloat;
+  extern const firCoeffInt32_t FIR_ParksMcClellan_resampling_ratio12_firInt32;
+  extern const firCoeffInt16_t FIR_ParksMcClellan_resampling_ratio12_firInt16;
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO12_FIR_FLOAT &FIR_ParksMcClellan_resampling_ratio12_firFloat
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO12_FIR_INT32 &FIR_ParksMcClellan_resampling_ratio12_firInt32
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO12_FIR_INT16 &FIR_ParksMcClellan_resampling_ratio12_firInt16
+
+  extern const firCoeffFloat_t FIR_KaiserWindow_resampling_ratio12_firFloat;
+  extern const firCoeffInt32_t FIR_KaiserWindow_resampling_ratio12_firInt32;
+  extern const firCoeffInt16_t FIR_KaiserWindow_resampling_ratio12_firInt16;
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO12_FIR_FLOAT &FIR_KaiserWindow_resampling_ratio12_firFloat
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO12_FIR_INT32 &FIR_KaiserWindow_resampling_ratio12_firInt32
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO12_FIR_INT16 &FIR_KaiserWindow_resampling_ratio12_firInt16
+
+#else /* AC_SUPPORT_RATIO_12 */
+
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO12_FIR_FLOAT NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO12_FIR_INT32 NULL
+  #define FIR_PARKSMCCLELLAN_RESAMPLING_RATIO12_FIR_INT16 NULL
+
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO12_FIR_FLOAT NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO12_FIR_INT32 NULL
+  #define FIR_KAISERWINDOW_RESAMPLING_RATIO12_FIR_INT16 NULL
+
+#endif /* AC_SUPPORT_RATIO_12 */
+
+
+#endif

@@ -1,0 +1,152 @@
+<!DOCTYPE html><html><title>Generated Code Preview</title><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="thirdParty/prism/prism-tomorow.css"><style>:root {
+            --preview_nav_button_background-color: #2f312f;
+            --preview_nav_button_background-color-disabled: rgb(129, 129, 231, 0.5);
+            --preview_nav_button_background-color-over: #808488;
+            --preview_nav_button_background-color-active: rgb(216, 216, 216);
+            --preview_nav_button_text-color: white;
+        }
+        body
+        {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        #container
+        {
+            /* width: 100vw; */
+            height:100vh;
+            font-family:'Arial', sans-serif; 
+            font-weight: bold;
+            font-size:1rem; 
+            display:grid;
+            grid-template-columns:1fr;
+            grid-template-rows: 48px 1fr;
+            box-sizing:border-box;
+        }
+
+        #preview_button_nav_bar
+        {
+            margin:0;
+            padding:5px;
+            border:0;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+    
+        }
+        #preview_content
+        {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        overflow: scroll;
+                
+        }
+
+
+        .preview_button_nav_bar {
+            display: flex;
+            place-items: row;
+            background-color: black;
+        }
+        .preview_nav_button_div {
+            width: 140px;
+            height: 100%;
+        }
+        .preview_nav_button {
+            display: inline-flex;
+            align-items: centers;
+            height: 40px;
+            width: 130px;
+            padding: 0;
+            background-color: var(--preview_nav_button_background-color);
+            color: var(--preview_nav_button_text-color);
+            border: none;
+            outline: none;
+            text-decoration: none;
+            border-radius: 3px;
+            /*	overflow: hidden;*/
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .preview_nav_button[disabled] {
+            background-color: var(--preview_nav_button_background-color-disabled);
+            pointer-events: none;
+
+        }
+
+
+        .preview_nav_button:hover {
+            background-color: blue;
+            background-color: var(--preview_nav_button_background-color-over);
+        }
+
+        .preview_nav_button:active {
+            background-color: rgb(195, 47, 62);
+            background-color: var(--preview_nav_button_background-color-active);
+
+
+        }
+
+        .preview_nav_button span {
+            background-color: rgba(0, 0, 0, 0.08);
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-position: center;
+            display: inline-flex;
+            align-items: centers;
+            padding: 0 0px;
+            margin-bottom: 100px;
+            height: 100%;
+            width: 30px;
+        }
+
+        .preview_nav_button span[bntState=true] {
+            background-image: url("icon-apply.png");
+        }
+
+
+        .preview_nav_button p {
+            width: 100%;
+            text-align: center;
+            justify-content: center
+        }</style><script>function initPreview()
+        {
+            //    localStorage.setItem('codepreview', text);
+            let elm = document.getElementById("code");
+            let txtToDisplay = localStorage.getItem('codepreview');
+            elm.innerHTML = txtToDisplay;
+            document.getElementById("Copy").addEventListener('click', (event) => {
+
+                navigator.clipboard.writeText(txtToDisplay).then(function () {
+                    alert('Copying to clipboard was successful!');
+                }, function (err) {
+                    alert(' Could not copy text: ', err);
+                });
+            });
+            document.getElementById("Save").addEventListener('click', (event) => {
+                QueryWriteFile();
+    
+            });
+        }
+
+        async function QueryWriteFile() 
+        {
+
+            const options = {
+                types: [
+                    {
+                        description: "Generated code C",
+                        accept: {
+                            "text/plain": [".c"],
+                        },
+                    },
+                ],
+            };
+            let txtToDisplay = localStorage.getItem('codepreview');
+            const handle = await window.showSaveFilePicker(options);
+            const writable = await handle.createWritable();
+            await writable.write(txtToDisplay);
+            await writable.close();
+
+        }</script></head><body class="body"><div id="container"><div id="preview_button_nav_bar" class="preview_button_nav_bar"><div class="preview_nav_button_div"><a class="preview_nav_button" id="Copy"><p>Copy</p></a></div><div class="preview_nav_button_div"><a class="preview_nav_button" id="Save"><p>Save</p></a></div></div><div id="preview_content"><pre><code class="language-javascript" id="code"></code></pre></div><script>initPreview();</script><script src="thirdParty/prism/prism.js"></script></div></body></html>

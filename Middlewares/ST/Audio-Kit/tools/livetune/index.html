@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><title>Live tune</title><head><meta name="viewport" content="width=device-width,initial-scale=1"><script>localStorage.openpages = Date.now();
+            window.addEventListener('storage', function (e) 
+            {
+                if(e.key == "openpages") 
+                {
+                    // Listen if anybody else is opening the same page!
+                    localStorage.page_available = Date.now();
+                }
+                if(e.key == "page_available") 
+                {
+                    let elm = document.getElementById("body");
+                    if( elm != null)
+                    {
+                        elm.setAttribute("style", "display:none");
+                    }
+                    alert("LiveTune is already opened in another tab");
+                    window.close();
+                }
+            }, false);</script><script src="thirdParty/TippyJs/popper.js"></script><script src="thirdParty/TippyJs/tippy-bundle.iife.js"></script><link rel="icon" type="image/png" href="style/images/favicon.svg"><link rel="stylesheet" href="thirdParty/DrawFlow/drawflow.css"><script src="thirdParty/DrawFlow/drawflow.js"></script><link rel="stylesheet" href="thirdParty/DrawFlow/beautiful.css"><script src="thirdParty/xterm/lib/xterm.js"></script><script src="thirdParty/xterm/lib/xterm-addon-fit.js"></script><script src="thirdParty/pureKnob/pureknob.js"></script><link rel="stylesheet" href="thirdParty/xterm/css/xterm.css"><link rel="stylesheet" href="style/livetune.css"><script src="scripts/livetune.js"></script><script src="configs.js"></script><script src="productInfo.json"></script></head><body class="body" id="body"><div id="dialogs" style="display:none"><div class="dialog-top" id="dialog-top" style="display:block"><div class="dialog-popup"><div id="dialog-box" class="dialog-box" style="display:block"></div></div></div></div><div class="container"><div id="header" class="header"><div id="logo" class="logo"></div><div id="graphState"><div id="logo_separator"></div><div id="title" class="title"><p>LiveTune</p></div><div class="fw_name"><div class="div_center_container edit_description_logo"><img id="bntInfoProject" class="content_center edit_img_logo" src="style/images/icon-info.svg" alt=""></div><p id="header_fw_name">FW Name</p></div></div><div class="preference_icon"><img id="preference" src="style/images/parameters.png"></div></div><div id="separator1" class="separator"></div><div id="navigation" class="navigation"><input onclick="hIndex.openPage('graph',this,'contentSelected')" id="radio1" type="radio" name="css-tabs"> <input onclick="hIndex.openPage('terminal',this,'contentSelected')" id="radio2" type="radio" name="css-tabs"><div id="tabs"><label id="tab1" for="radio1">Edit View</label> <label id="tab2" for="radio2">Terminal</label></div></div><div id="buttons" class="buttons"><div id="button_div" class="buttons_div"><div id="mainBar" class="buttonBarMainContainer"></div><div id="customBar" class="buttonBarCustomContainer"></div></div></div><div id="separator2" class="separator"></div><div id="content" class="content"><section id="graph" class="tabcontent"><div class="graph_elem_top"><div id="graph_palette" class="graph_palette"></div><div id="graph_content" class="graph_content"></div></div></section><section id="terminal" class="tabcontent"><div class="terminal"><div id="terminal_nav" class="terminal_nav"><div id="buttonBarTermContainer" class="buttonBarTermContainer"></div></div><div id="terminalRcv"></div></div></section></div><div id="footer" class="footer"><div id="footer_heart"><div id="footer_heart_icon" class="footer_heart"></div></div><div id="footer_stlink" class="footer_stLink"><a href="https://www.st.com" target="_blank">About STMicroelectronics</a></div><div id="footer_app_Version" class="footer_app_version"><a></a></div><div id="footer_fw_Version" class="footer_fw_version"></div><div id="transition_bw" class="transition_bw"></div><div id="cpu_load" class="cpu_load"></div><div id="hWConfig" class="AudioConfig"></div><div id="BoardConfig" class="BoardConfig"></div></div></div><script src="thirdParty/xdialog/xdialog.js"></script><div id="DynaScript"></div><link rel="stylesheet" href="thirdParty/xdialog/xdialog.css"><script>var hIndex = new CIndex();
+        if(hIndex)
+        {
+            hIndex.onInit();
+        }</script></body></html>

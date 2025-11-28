@@ -1,0 +1,51 @@
+{
+    "source_folder": "C:/PathToAudioKit/",
+    "destination_folder": "C:/PathToCubeMxRepository/",
+    "installer_infos": {
+
+        "Projects/STM32N6570-DK/Applications/Livetune/Common" : "Projects/STM32N6570-DK/Applications/Livetune/Common" ,
+        "Projects/STM32N6570-DK/Applications/Livetune/Platform" : "Projects/STM32N6570-DK/Applications/Livetune/Platform",
+
+        "Projects/STM32N6570-DK/Applications/Livetune/Designer/Designer.ioc"   : "Projects/STM32N6570-DK/Applications/Livetune/Designer/Designer.ioc",
+        "Projects/STM32N6570-DK/Applications/Livetune/Designer/.extSettings"   : "Projects/STM32N6570-DK/Applications/Livetune/Designer/.extSettings",
+        "Projects/STM32N6570-DK/Applications/Livetune/Designer/Appli"          : "Projects/STM32N6570-DK/Applications/Livetune/Designer/Appli",
+
+        "Projects/STM32N6570-DK/Applications/Livetune/Release/Release.ioc"     : "Projects/STM32N6570-DK/Applications/Livetune/Release/Release.ioc",
+        "Projects/STM32N6570-DK/Applications/Livetune/Release/.extSettings"    : "Projects/STM32N6570-DK/Applications/Livetune/Release/.extSettings",
+        "Projects/STM32N6570-DK/Applications/Livetune/Release/Appli"           : "Projects/STM32N6570-DK/Applications/Livetune/Release/Appli",
+
+        "Projects/STM32N6570-DK/Applications/Livetune/Tuner/Tuner.ioc"         : "Projects/STM32N6570-DK/Applications/Livetune/Tuner/Tuner.ioc",
+        "Projects/STM32N6570-DK/Applications/Livetune/Tuner/.extSettings"      : "Projects/STM32N6570-DK/Applications/Livetune/Tuner/.extSettings",
+        "Projects/STM32N6570-DK/Applications/Livetune/Tuner/Appli"             : "Projects/STM32N6570-DK/Applications/Livetune/Tuner/Appli",
+
+        "Projects/STM32N6570-DK/Applications/Livetune/FSBL.bin"                : "Projects/STM32N6570-DK/Applications/Livetune/FSBL.bin",
+        "Projects/STM32N6570-DK/Applications/Livetune/SLA0044_LICENSE.md"      : "Projects/STM32N6570-DK/Applications/Livetune/SLA0044_LICENSE.md",
+        "Projects/STM32N6570-DK/Applications/Livetune/SLA0044_LICENSE.txt"     : "Projects/STM32N6570-DK/Applications/Livetune/SLA0044_LICENSE.txt",
+        "Projects/STM32N6570-DK/Applications/Livetune/flasher.sh"              : "Projects/STM32N6570-DK/Applications/Livetune/flasher.sh",
+        "Projects/STM32N6570-DK/Applications/Livetune/postGen.py"              : "Projects/STM32N6570-DK/Applications/Livetune/postGen.py",
+        "Projects/STM32N6570-DK/Applications/Livetune/STM32N6570-Discovery.ld" : "Projects/STM32N6570-DK/Applications/Livetune/STM32N6570-Discovery.ld",
+        "Projects/STM32N6570-DK/Applications/Livetune/reloadRam.mac"           : "Projects/STM32N6570-DK/Applications/Livetune/reloadRam.mac",
+        
+        "Drivers/CMSIS/DSP/Lib" : "Drivers/CMSIS/DSP/Lib",
+        
+        "Middlewares/ST/Audio-Kit"                            : "Middlewares/ST/Audio-Kit",
+        "Middlewares/ST/AudioBuffer"                          : "Middlewares/ST/AudioBuffer",
+        "Middlewares/ST/STM32_Audio/STM32_AcousticBF_Library" : "Middlewares/ST/STM32_Audio/STM32_AcousticBF_Library",
+        "Middlewares/ST/STM32_Audio/Addons/Common"            : "Middlewares/ST/STM32_Audio/Addons/Common",
+        "Middlewares/ST/STM32_Audio/Addons/PDM"               : "Middlewares/ST/STM32_Audio/Addons/PDM",
+
+        "Middlewares/Third_Party/Audio/SpeexDsp" : "Middlewares/Third_Party/Audio/SpeexDsp",
+        "Middlewares/Third_Party/TinySoundFont"  : "Middlewares/Third_Party/TinySoundFont",
+        "Middlewares/Third_Party/tinyusb"        : "Middlewares/Third_Party/tinyusb",
+        
+        "Utilities/Audio"            : "Utilities/Audio"          ,
+        "Utilities/STJson"           : "Utilities/STJson"         ,
+        "Utilities/STPmem"           : "Utilities/STPmem"         ,
+        "Utilities/CyclesCnt"        : "Utilities/CyclesCnt"      ,
+        "Utilities/STFlashStorage"   : "Utilities/STFlashStorage" ,
+        "Utilities/STOs"             : "Utilities/STOs"           ,
+        "Utilities/Terminal"         : "Utilities/Terminal"       ,
+        "Utilities/Traces"           : "Utilities/Traces"
+    }
+}
+

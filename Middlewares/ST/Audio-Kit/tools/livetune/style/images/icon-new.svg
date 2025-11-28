@@ -1,0 +1,10 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 50 50"
+    id="vector">
+    <path
+        id="path"
+        d="M 30.4 2 L 7 2 L 7 48 L 43 48 L 43 14.6 L 30.4 2 Z M 30 15 L 30 4.4 L 40.6 15 L 30 15 Z"
+        fill="#ffffff"
+        stroke-width="1"/>
+</svg>

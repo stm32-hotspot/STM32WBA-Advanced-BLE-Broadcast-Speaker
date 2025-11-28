@@ -1,0 +1,15 @@
+Rebuild.sh rebuild all DSP libraries using preset files. 
+
+A preset file is just a series of defines passed to CMake that enable DSP modules.
+
+Example:
+	-DARM_COS_F32:BOOL=ON 
+The array listCfg inside rebuild.sh allows to enable MCU build,
+The format is important and allows to load the right preset file and produce the final library name 
+
+listCfg=(\
+	"libCMSISDSP_cortex-m55_FFTmax2048" \
+where: 	
+	m55 = CPU passed to cmake 
+	FFTmax2048 = load preset preset. FFTmax2048
+

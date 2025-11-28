@@ -1,0 +1,119 @@
+#ifndef __IIR_NOISE_BANDPASS_COEF_H
+#define __IIR_NOISE_BANDPASS_COEF_H
+
+#include "biquad_typedef.h"
+#include "audio_chain_conf.h"
+
+#ifdef AC_SUPPORT_FS_8000
+  extern const biquadFloat_t IIR_butterworth_noise_bandpass_fs8000_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_noise_bandpass_fs8000_biquadInt32;
+
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS8000_BIQUAD_FLOAT &IIR_butterworth_noise_bandpass_fs8000_biquadFloat
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS8000_BIQUAD_INT32 &IIR_butterworth_noise_bandpass_fs8000_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_noise_bandpass_fs8000_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_noise_bandpass_fs8000_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS8000_BIQUAD_FLOAT &IIR_chebyshev1_noise_bandpass_fs8000_biquadFloat
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS8000_BIQUAD_INT32 &IIR_chebyshev1_noise_bandpass_fs8000_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_noise_bandpass_fs8000_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_noise_bandpass_fs8000_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS8000_BIQUAD_FLOAT &IIR_chebyshev2_noise_bandpass_fs8000_biquadFloat
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS8000_BIQUAD_INT32 &IIR_chebyshev2_noise_bandpass_fs8000_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_noise_bandpass_fs8000_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_noise_bandpass_fs8000_biquadInt32;
+
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS8000_BIQUAD_FLOAT &IIR_elliptic_noise_bandpass_fs8000_biquadFloat
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS8000_BIQUAD_INT32 &IIR_elliptic_noise_bandpass_fs8000_biquadInt32
+
+#else /* AC_SUPPORT_FS_8000 */
+
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS8000_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS8000_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS8000_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS8000_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS8000_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS8000_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS8000_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS8000_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_FS_8000 */
+
+#ifdef AC_SUPPORT_FS_16000
+  extern const biquadFloat_t IIR_butterworth_noise_bandpass_fs16000_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_noise_bandpass_fs16000_biquadInt32;
+
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS16000_BIQUAD_FLOAT &IIR_butterworth_noise_bandpass_fs16000_biquadFloat
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS16000_BIQUAD_INT32 &IIR_butterworth_noise_bandpass_fs16000_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_noise_bandpass_fs16000_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_noise_bandpass_fs16000_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS16000_BIQUAD_FLOAT &IIR_chebyshev1_noise_bandpass_fs16000_biquadFloat
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS16000_BIQUAD_INT32 &IIR_chebyshev1_noise_bandpass_fs16000_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_noise_bandpass_fs16000_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_noise_bandpass_fs16000_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS16000_BIQUAD_FLOAT &IIR_chebyshev2_noise_bandpass_fs16000_biquadFloat
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS16000_BIQUAD_INT32 &IIR_chebyshev2_noise_bandpass_fs16000_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_noise_bandpass_fs16000_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_noise_bandpass_fs16000_biquadInt32;
+
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS16000_BIQUAD_FLOAT &IIR_elliptic_noise_bandpass_fs16000_biquadFloat
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS16000_BIQUAD_INT32 &IIR_elliptic_noise_bandpass_fs16000_biquadInt32
+
+#else /* AC_SUPPORT_FS_16000 */
+
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS16000_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS16000_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS16000_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS16000_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS16000_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS16000_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS16000_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS16000_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_FS_16000 */
+
+#ifdef AC_SUPPORT_FS_48000
+  extern const biquadFloat_t IIR_butterworth_noise_bandpass_fs48000_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_noise_bandpass_fs48000_biquadInt32;
+
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS48000_BIQUAD_FLOAT &IIR_butterworth_noise_bandpass_fs48000_biquadFloat
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS48000_BIQUAD_INT32 &IIR_butterworth_noise_bandpass_fs48000_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_noise_bandpass_fs48000_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_noise_bandpass_fs48000_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS48000_BIQUAD_FLOAT &IIR_chebyshev1_noise_bandpass_fs48000_biquadFloat
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS48000_BIQUAD_INT32 &IIR_chebyshev1_noise_bandpass_fs48000_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_noise_bandpass_fs48000_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_noise_bandpass_fs48000_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS48000_BIQUAD_FLOAT &IIR_chebyshev2_noise_bandpass_fs48000_biquadFloat
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS48000_BIQUAD_INT32 &IIR_chebyshev2_noise_bandpass_fs48000_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_noise_bandpass_fs48000_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_noise_bandpass_fs48000_biquadInt32;
+
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS48000_BIQUAD_FLOAT &IIR_elliptic_noise_bandpass_fs48000_biquadFloat
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS48000_BIQUAD_INT32 &IIR_elliptic_noise_bandpass_fs48000_biquadInt32
+
+#else /* AC_SUPPORT_FS_48000 */
+
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS48000_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_NOISE_BANDPASS_FS48000_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS48000_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_NOISE_BANDPASS_FS48000_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS48000_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_NOISE_BANDPASS_FS48000_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS48000_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_NOISE_BANDPASS_FS48000_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_FS_48000 */
+
+
+#endif

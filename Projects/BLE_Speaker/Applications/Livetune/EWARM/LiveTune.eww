@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\LiveTune.ewp</path>
+    </project>
+    <batchBuild>
+        <batchDefinition>
+            <name>Build All</name>
+            <member>
+                <project>LiveTune</project>
+                <configuration>Tuner</configuration>
+            </member>
+            <member>
+                <project>LiveTune</project>
+                <configuration>LiveTune</configuration>
+            </member>
+            <member>
+                <project>LiveTune</project>
+                <configuration>Release</configuration>
+            </member>
+        </batchDefinition>
+    </batchBuild>
+</workspace>

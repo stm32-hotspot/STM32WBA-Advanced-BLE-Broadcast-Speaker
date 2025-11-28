@@ -1,0 +1,230 @@
+#ifndef __IIR_LOW_PASS_COEF_H
+#define __IIR_LOW_PASS_COEF_H
+
+#include "biquad_typedef.h"
+#include "audio_chain_conf.h"
+
+#ifdef AC_SUPPORT_RATIO_2
+  extern const biquadFloat_t IIR_butterworth_resampling_ratio2_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_resampling_ratio2_biquadInt32;
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO2_BIQUAD_FLOAT &IIR_butterworth_resampling_ratio2_biquadFloat
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO2_BIQUAD_INT32 &IIR_butterworth_resampling_ratio2_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_resampling_ratio2_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_resampling_ratio2_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO2_BIQUAD_FLOAT &IIR_chebyshev1_resampling_ratio2_biquadFloat
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO2_BIQUAD_INT32 &IIR_chebyshev1_resampling_ratio2_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_resampling_ratio2_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_resampling_ratio2_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO2_BIQUAD_FLOAT &IIR_chebyshev2_resampling_ratio2_biquadFloat
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO2_BIQUAD_INT32 &IIR_chebyshev2_resampling_ratio2_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_resampling_ratio2_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_resampling_ratio2_biquadInt32;
+
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO2_BIQUAD_FLOAT &IIR_elliptic_resampling_ratio2_biquadFloat
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO2_BIQUAD_INT32 &IIR_elliptic_resampling_ratio2_biquadInt32
+
+#else /* AC_SUPPORT_RATIO_2 */
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO2_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO2_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO2_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO2_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO2_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO2_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO2_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO2_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_RATIO_2 */
+
+#ifdef AC_SUPPORT_RATIO_3
+  extern const biquadFloat_t IIR_butterworth_resampling_ratio3_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_resampling_ratio3_biquadInt32;
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO3_BIQUAD_FLOAT &IIR_butterworth_resampling_ratio3_biquadFloat
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO3_BIQUAD_INT32 &IIR_butterworth_resampling_ratio3_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_resampling_ratio3_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_resampling_ratio3_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO3_BIQUAD_FLOAT &IIR_chebyshev1_resampling_ratio3_biquadFloat
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO3_BIQUAD_INT32 &IIR_chebyshev1_resampling_ratio3_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_resampling_ratio3_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_resampling_ratio3_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO3_BIQUAD_FLOAT &IIR_chebyshev2_resampling_ratio3_biquadFloat
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO3_BIQUAD_INT32 &IIR_chebyshev2_resampling_ratio3_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_resampling_ratio3_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_resampling_ratio3_biquadInt32;
+
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO3_BIQUAD_FLOAT &IIR_elliptic_resampling_ratio3_biquadFloat
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO3_BIQUAD_INT32 &IIR_elliptic_resampling_ratio3_biquadInt32
+
+#else /* AC_SUPPORT_RATIO_3 */
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO3_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO3_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO3_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO3_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO3_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO3_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO3_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO3_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_RATIO_3 */
+
+#ifdef AC_SUPPORT_RATIO_4
+  extern const biquadFloat_t IIR_butterworth_resampling_ratio4_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_resampling_ratio4_biquadInt32;
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO4_BIQUAD_FLOAT &IIR_butterworth_resampling_ratio4_biquadFloat
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO4_BIQUAD_INT32 &IIR_butterworth_resampling_ratio4_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_resampling_ratio4_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_resampling_ratio4_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO4_BIQUAD_FLOAT &IIR_chebyshev1_resampling_ratio4_biquadFloat
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO4_BIQUAD_INT32 &IIR_chebyshev1_resampling_ratio4_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_resampling_ratio4_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_resampling_ratio4_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO4_BIQUAD_FLOAT &IIR_chebyshev2_resampling_ratio4_biquadFloat
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO4_BIQUAD_INT32 &IIR_chebyshev2_resampling_ratio4_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_resampling_ratio4_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_resampling_ratio4_biquadInt32;
+
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO4_BIQUAD_FLOAT &IIR_elliptic_resampling_ratio4_biquadFloat
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO4_BIQUAD_INT32 &IIR_elliptic_resampling_ratio4_biquadInt32
+
+#else /* AC_SUPPORT_RATIO_4 */
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO4_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO4_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO4_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO4_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO4_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO4_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO4_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO4_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_RATIO_4 */
+
+#ifdef AC_SUPPORT_RATIO_6
+  extern const biquadFloat_t IIR_butterworth_resampling_ratio6_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_resampling_ratio6_biquadInt32;
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO6_BIQUAD_FLOAT &IIR_butterworth_resampling_ratio6_biquadFloat
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO6_BIQUAD_INT32 &IIR_butterworth_resampling_ratio6_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_resampling_ratio6_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_resampling_ratio6_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO6_BIQUAD_FLOAT &IIR_chebyshev1_resampling_ratio6_biquadFloat
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO6_BIQUAD_INT32 &IIR_chebyshev1_resampling_ratio6_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_resampling_ratio6_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_resampling_ratio6_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO6_BIQUAD_FLOAT &IIR_chebyshev2_resampling_ratio6_biquadFloat
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO6_BIQUAD_INT32 &IIR_chebyshev2_resampling_ratio6_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_resampling_ratio6_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_resampling_ratio6_biquadInt32;
+
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO6_BIQUAD_FLOAT &IIR_elliptic_resampling_ratio6_biquadFloat
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO6_BIQUAD_INT32 &IIR_elliptic_resampling_ratio6_biquadInt32
+
+#else /* AC_SUPPORT_RATIO_6 */
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO6_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO6_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO6_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO6_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO6_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO6_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO6_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO6_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_RATIO_6 */
+
+#ifdef AC_SUPPORT_RATIO_8
+  extern const biquadFloat_t IIR_butterworth_resampling_ratio8_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_resampling_ratio8_biquadInt32;
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO8_BIQUAD_FLOAT &IIR_butterworth_resampling_ratio8_biquadFloat
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO8_BIQUAD_INT32 &IIR_butterworth_resampling_ratio8_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_resampling_ratio8_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_resampling_ratio8_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO8_BIQUAD_FLOAT &IIR_chebyshev1_resampling_ratio8_biquadFloat
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO8_BIQUAD_INT32 &IIR_chebyshev1_resampling_ratio8_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_resampling_ratio8_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_resampling_ratio8_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO8_BIQUAD_FLOAT &IIR_chebyshev2_resampling_ratio8_biquadFloat
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO8_BIQUAD_INT32 &IIR_chebyshev2_resampling_ratio8_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_resampling_ratio8_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_resampling_ratio8_biquadInt32;
+
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO8_BIQUAD_FLOAT &IIR_elliptic_resampling_ratio8_biquadFloat
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO8_BIQUAD_INT32 &IIR_elliptic_resampling_ratio8_biquadInt32
+
+#else /* AC_SUPPORT_RATIO_8 */
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO8_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO8_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO8_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO8_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO8_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO8_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO8_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO8_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_RATIO_8 */
+
+#ifdef AC_SUPPORT_RATIO_12
+  extern const biquadFloat_t IIR_butterworth_resampling_ratio12_biquadFloat;
+  extern const biquadInt32_t IIR_butterworth_resampling_ratio12_biquadInt32;
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO12_BIQUAD_FLOAT &IIR_butterworth_resampling_ratio12_biquadFloat
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO12_BIQUAD_INT32 &IIR_butterworth_resampling_ratio12_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev1_resampling_ratio12_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev1_resampling_ratio12_biquadInt32;
+
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO12_BIQUAD_FLOAT &IIR_chebyshev1_resampling_ratio12_biquadFloat
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO12_BIQUAD_INT32 &IIR_chebyshev1_resampling_ratio12_biquadInt32
+
+  extern const biquadFloat_t IIR_chebyshev2_resampling_ratio12_biquadFloat;
+  extern const biquadInt32_t IIR_chebyshev2_resampling_ratio12_biquadInt32;
+
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO12_BIQUAD_FLOAT &IIR_chebyshev2_resampling_ratio12_biquadFloat
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO12_BIQUAD_INT32 &IIR_chebyshev2_resampling_ratio12_biquadInt32
+
+  extern const biquadFloat_t IIR_elliptic_resampling_ratio12_biquadFloat;
+  extern const biquadInt32_t IIR_elliptic_resampling_ratio12_biquadInt32;
+
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO12_BIQUAD_FLOAT &IIR_elliptic_resampling_ratio12_biquadFloat
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO12_BIQUAD_INT32 &IIR_elliptic_resampling_ratio12_biquadInt32
+
+#else /* AC_SUPPORT_RATIO_12 */
+
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO12_BIQUAD_FLOAT NULL
+  #define IIR_BUTTERWORTH_RESAMPLING_RATIO12_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO12_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV1_RESAMPLING_RATIO12_BIQUAD_INT32 NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO12_BIQUAD_FLOAT NULL
+  #define IIR_CHEBYSHEV2_RESAMPLING_RATIO12_BIQUAD_INT32 NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO12_BIQUAD_FLOAT NULL
+  #define IIR_ELLIPTIC_RESAMPLING_RATIO12_BIQUAD_INT32 NULL
+#endif /* AC_SUPPORT_RATIO_12 */
+
+
+#endif

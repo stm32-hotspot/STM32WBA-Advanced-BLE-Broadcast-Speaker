@@ -1,0 +1,220 @@
+{
+    "Instances": [
+        {
+            "RefElement": "faust-example",
+            "InstanceName": "faust-example-1",
+            "Description": "faust-example-1",
+            "Meta": "{'PosX':'560.75','PosY':'707','expanded':true}",
+            "Params": [
+                {
+                    "Name": "freq",
+                    "Value": "256"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_2",
+                            "InstanceNameDst": "SysIn-Microphones-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_0",
+                            "InstanceNameDst": "capture-1",
+                            "PinDst": 0,
+                            "Params": [
+                                {
+                                    "Name": "bufferType",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "timeFreq",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "nbElements",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "fs",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbChannels",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "interleaved",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbFrames",
+                                    "Value": "NO_CHANGE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "SysIn-Microphones",
+            "InstanceName": "SysIn-Microphones-1",
+            "Description": "SysIn-Microphones-1",
+            "Meta": "{'PosX':'179','PosY':'537.25','expanded':true}",
+            "Params": [
+                {
+                    "Name": "chunkType",
+                    "Value": "AUDIO_CHUNK_TYPE_SYS_IN"
+                },
+                {
+                    "Name": "nbChannels",
+                    "Value": "2"
+                },
+                {
+                    "Name": "fs",
+                    "Value": "16000"
+                },
+                {
+                    "Name": "nbElements",
+                    "Value": "128"
+                },
+                {
+                    "Name": "nbFrames",
+                    "Value": "2"
+                },
+                {
+                    "Name": "timeFreq",
+                    "Value": "ABUFF_FORMAT_TIME"
+                },
+                {
+                    "Name": "bufferType",
+                    "Value": "ABUFF_FORMAT_FIXED16"
+                },
+                {
+                    "Name": "interleaved",
+                    "Value": "ABUFF_FORMAT_INTERLEAVED"
+                },
+                {
+                    "Name": "variable",
+                    "Value": "SysIn_mic"
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_2",
+                            "InstanceNameDst": "faust-example-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "Graph-Viewer",
+            "InstanceName": "Graph-Viewer-1",
+            "Description": "Graph-Viewer-1",
+            "Meta": "{'PosX':'1702','PosY':'490.75','expanded':true}",
+            "Params": [
+                {
+                    "Name": "graphic",
+                    "Value": "0"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_1",
+                            "InstanceNameDst": "capture-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "capture",
+            "InstanceName": "capture-1",
+            "Description": "capture-1",
+            "Meta": "{'PosX':'1067.25','PosY':'724','expanded':true}",
+            "Params": [
+                {
+                    "Name": "Refresh",
+                    "Value": "30"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_0",
+                            "InstanceNameDst": "faust-example-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_1",
+                            "InstanceNameDst": "Graph-Viewer-1",
+                            "PinDst": 0
+                        }
+                    ]
+                },
+                {
+                    "Cnx": []
+                }
+            ]
+        }
+    ],
+    "Meta": "{'TranslateX':7.893333333333338,'TranslateY':-418.18222222222215,'Zoom':0.8}",
+    "Signature": "Instance",
+    "Version": "v1.0.0",
+    "Editable": true,
+    "InstanceMax": 128,
+    "ConnectionOutMax": 1,
+    "ConnectionInMax": 1,
+    "ToolsBar": [
+        {
+            "Title": "Help",
+            "ID": "ToolBar#00",
+            "Cmd": "help",
+            "Type": "push",
+            "Bar": "Term"
+        },
+        {
+            "Title": "Generate code",
+            "ID": "ToolBar#03",
+            "Cmd": "generate",
+            "Type": "push",
+            "Bar": "customBar"
+        },
+        {
+            "Title": "Start",
+            "ID": "ToolBar#04",
+            "Cmd": "start",
+            "Type": "push",
+            "Bar": "customBar"
+        },
+        {
+            "Title": "Stop",
+            "ID": "ToolBar#05",
+            "Cmd": "stop",
+            "Type": "push",
+            "Bar": "customBar"
+        }
+    ]
+}

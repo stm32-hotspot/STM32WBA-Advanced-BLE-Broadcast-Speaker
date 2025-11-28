@@ -1,0 +1,105 @@
+/*###ICF### Section handled by ICF editor, don't touch! ****/
+/*-Editor annotation file-*/
+/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_0.xml" */
+/*-Specials-*/
+define symbol __ICFEDIT_intvec_start__ = 0x08000000;
+/*-Memory Regions-*/
+define symbol __region_NVM_size__             = 0x10000;
+define symbol __ICFEDIT_region_NVM_end__      = 0x081FFFFF;
+define symbol __ICFEDIT_region_NVM_start__    = __ICFEDIT_region_NVM_end__ - __region_NVM_size__ + 0x1;
+define symbol __ICFEDIT_region_ROM_start__     = 0x08000000;
+define symbol __ICFEDIT_region_ROM_end__       = __ICFEDIT_region_NVM_start__ - 0x1;
+define symbol __ICFEDIT_region_RAM_start__     = 0x20000000;
+define symbol __ICFEDIT_region_RAM_end__       = 0x2009FBFF;
+
+/*-Sizes-*/
+define symbol __ICFEDIT_size_cstack__ =  3 * 1024;
+define symbol __ICFEDIT_size_heap__   =  520 * 1024;
+/**** End of ICF editor section. ###ICF###*/
+
+
+define memory mem with size = 4G;
+define region ROM_region         = mem:[from __ICFEDIT_region_ROM_start__   to __ICFEDIT_region_ROM_end__];
+define region RAM_region         = mem:[from __ICFEDIT_region_RAM_start__   to __ICFEDIT_region_RAM_end__];
+
+define block CSTACK    with alignment = 8, size = __ICFEDIT_size_cstack__   { };
+define block HEAP      with alignment = 8, size = __ICFEDIT_size_heap__     { };
+
+
+/*
+    Defines 3 dynamic Tables used for 
+    Event plugins:
+        A suite tools, We can remove/add from the project by build exclusion 
+    tTerminal plugins
+        A suite of tool. We can call form the serial terminal we can remove/add from the project by build exclusion 
+    Algo Factory
+        Factory definition of all audio chaine algo exposed We can call form the serial terminal we can remove/add from the project by build exclusion 
+      
+      
+    A dynamic table is a set of records (pointer or struct ) ended by a 0
+
+*/
+
+define  section  terminatorCmd
+{
+  udata32  0x0;
+  udata8  "END";
+};
+
+define  section  terminatorEvt
+{
+  udata32  0x0;
+  udata8  "END";
+};
+define  section  terminatorAlgo
+{
+  udata32  0x0;
+  udata8  "END";
+};
+
+define block ROM_CONTENT with fixed order
+{
+        /* This block allows to export the Flash size at the "C" level */
+        readonly section ROM_length_used,
+        
+        /* section dynamic table for the algo factory */
+        section algo_factory,
+        section terminatorAlgo,
+        
+        /* section dynamic table for the terminal cmd*/
+        section term_cmd_entries,
+        section terminatorCmd,
+        
+        /* section dynamic table for the evt plugin*/
+        section st_plugin_entries,
+        readonly section  terminatorEvt,
+              
+        /* common read only data */
+	readonly
+};
+/* by default the linker remove all unused sections, we need to prevent this for terminators markers and variables */
+keep { section ROM_length_used,section terminatorEvt,section terminatorCmd,section terminatorAlgo };
+
+
+
+
+initialize by copy { readwrite };
+do not initialize  { section .noinit };
+
+place at address mem:__ICFEDIT_intvec_start__ { readonly section .intvec };
+
+
+
+/* This block allows to export the Flash size at the "C" level */
+define block RW_CONTENT with fixed order
+{
+  block CSTACK,
+  block HEAP,
+  readwrite section RW_length_used,
+  readwrite 
+};
+
+
+place in ROM_region   { block ROM_CONTENT };
+place in RAM_region   { block RW_CONTENT };
+                        

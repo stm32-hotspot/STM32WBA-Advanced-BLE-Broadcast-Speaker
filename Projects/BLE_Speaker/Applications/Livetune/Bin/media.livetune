@@ -1,0 +1,551 @@
+{
+    "Instances": [
+        {
+            "RefElement": "SysIn-BLE-LC3",
+            "InstanceName": "SysIn-BLE-LC3-1",
+            "Description": "SysIn-BLE-LC3-1",
+            "Meta": "{'PosX':'297','PosY':'35','expanded':true}",
+            "Params": [
+                {
+                    "Name": "chunkType",
+                    "Value": "AUDIO_CHUNK_TYPE_SYS_IN"
+                },
+                {
+                    "Name": "nbChannels",
+                    "Value": "2"
+                },
+                {
+                    "Name": "fs",
+                    "Value": "48000"
+                },
+                {
+                    "Name": "nbElements",
+                    "Value": "384"
+                },
+                {
+                    "Name": "nbFrames",
+                    "Value": "2"
+                },
+                {
+                    "Name": "timeFreq",
+                    "Value": "ABUFF_FORMAT_TIME"
+                },
+                {
+                    "Name": "bufferType",
+                    "Value": "ABUFF_FORMAT_FIXED16"
+                },
+                {
+                    "Name": "interleaved",
+                    "Value": "ABUFF_FORMAT_INTERLEAVED"
+                },
+                {
+                    "Name": "variable",
+                    "Value": "SysIn_BLE_LC3"
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_0",
+                            "InstanceNameDst": "stereo2mono-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "stereo2mono",
+            "InstanceName": "stereo2mono-1",
+            "Description": "stereo2mono-1",
+            "Meta": "{'PosX':'270','PosY':'420','expanded':true}",
+            "Params": [
+                {
+                    "Name": "balance",
+                    "Value": "0"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_0",
+                            "InstanceNameDst": "SysIn-BLE-LC3-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_1",
+                            "InstanceNameDst": "FIR-equalizer-1",
+                            "PinDst": 0,
+                            "Params": [
+                                {
+                                    "Name": "bufferType",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "timeFreq",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbElements",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "fs",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbChannels",
+                                    "Value": 1
+                                },
+                                {
+                                    "Name": "interleaved",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbFrames",
+                                    "Value": "NO_CHANGE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "FIR-equalizer",
+            "InstanceName": "FIR-equalizer-1",
+            "Description": "FIR-equalizer-1",
+            "Meta": "{'PosX':'696','PosY':'-208','expanded':true}",
+            "Params": [
+                {
+                    "Name": "ramType",
+                    "Value": "0"
+                },
+                {
+                    "Name": "preset",
+                    "Value": "0"
+                },
+                {
+                    "Name": "firType",
+                    "Value": "0"
+                },
+                {
+                    "Name": "firSize",
+                    "Value": "50"
+                },
+                {
+                    "Name": "gainInterpolLinear",
+                    "Value": "0"
+                },
+                {
+                    "Name": "firResponseCurve",
+                    "Value": "{\"0\":[0,0],\"1\":[60,3],\"2\":[300,0],\"3\":[2000,-10],\"4\":[8000,-15],\"5\":[20000,-20]}"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_1",
+                            "InstanceNameDst": "stereo2mono-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": []
+                },
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_4",
+                            "InstanceNameDst": "mix-1",
+                            "PinDst": 0,
+                            "Params": [
+                                {
+                                    "Name": "bufferType",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "timeFreq",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "nbElements",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "fs",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbChannels",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "interleaved",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbFrames",
+                                    "Value": "NO_CHANGE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "mix",
+            "InstanceName": "mix-1",
+            "Description": "mix-1",
+            "Meta": "{'PosX':'1458','PosY':'443','expanded':true}",
+            "Params": [
+                {
+                    "Name": "gain0",
+                    "Value": "0.0"
+                },
+                {
+                    "Name": "gain1",
+                    "Value": "-4"
+                },
+                {
+                    "Name": "gain2",
+                    "Value": "0.0"
+                },
+                {
+                    "Name": "gain3",
+                    "Value": "0.0"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_4",
+                            "InstanceNameDst": "FIR-equalizer-1",
+                            "PinDst": 1
+                        }
+                    ]
+                },
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_3",
+                            "InstanceNameDst": "resample-1",
+                            "PinDst": 0
+                        }
+                    ]
+                },
+                {
+                    "Cnx": []
+                },
+                {
+                    "Cnx": []
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_5",
+                            "InstanceNameDst": "mono2stereo-1",
+                            "PinDst": 0,
+                            "Params": [
+                                {
+                                    "Name": "bufferType",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "timeFreq",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbElements",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "fs",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbChannels",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "interleaved",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbFrames",
+                                    "Value": "NO_CHANGE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "SysIn-WAVFILE",
+            "InstanceName": "SysIn-WAVFILE-1",
+            "Description": "SysIn-WAVFILE-1",
+            "Meta": "{'PosX':'310.333','PosY':'691.667','expanded':true}",
+            "Params": [
+                {
+                    "Name": "chunkType",
+                    "Value": "AUDIO_CHUNK_TYPE_SYS_IN"
+                },
+                {
+                    "Name": "nbChannels",
+                    "Value": "1"
+                },
+                {
+                    "Name": "fs",
+                    "Value": "16000"
+                },
+                {
+                    "Name": "nbElements",
+                    "Value": "128"
+                },
+                {
+                    "Name": "nbFrames",
+                    "Value": "2"
+                },
+                {
+                    "Name": "timeFreq",
+                    "Value": "ABUFF_FORMAT_TIME"
+                },
+                {
+                    "Name": "bufferType",
+                    "Value": "ABUFF_FORMAT_FIXED16"
+                },
+                {
+                    "Name": "interleaved",
+                    "Value": "ABUFF_FORMAT_INTERLEAVED"
+                },
+                {
+                    "Name": "variable",
+                    "Value": "SysIn_WavFile"
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_2",
+                            "InstanceNameDst": "resample-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "resample",
+            "InstanceName": "resample-1",
+            "Description": "resample-1",
+            "Meta": "{'PosX':'655.333','PosY':'809','expanded':true}",
+            "Params": [
+                {
+                    "Name": "ramType",
+                    "Value": "1"
+                },
+                {
+                    "Name": "filterType",
+                    "Value": "4"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_2",
+                            "InstanceNameDst": "SysIn-WAVFILE-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_3",
+                            "InstanceNameDst": "mix-1",
+                            "PinDst": 1,
+                            "Params": [
+                                {
+                                    "Name": "bufferType",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "timeFreq",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "nbElements",
+                                    "Value": "384"
+                                },
+                                {
+                                    "Name": "fs",
+                                    "Value": "48000"
+                                },
+                                {
+                                    "Name": "nbChannels",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "interleaved",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbFrames",
+                                    "Value": "NO_CHANGE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "SysOut-Codec-DAC",
+            "InstanceName": "SysOut-Codec-DAC-1",
+            "Description": "SysOut-Codec-DAC-1",
+            "Meta": "{'PosX':'1811','PosY':'606','expanded':true}",
+            "Params": [
+                {
+                    "Name": "chunkType",
+                    "Value": "AUDIO_CHUNK_TYPE_SYS_OUT"
+                },
+                {
+                    "Name": "nbChannels",
+                    "Value": "2"
+                },
+                {
+                    "Name": "fs",
+                    "Value": "48000"
+                },
+                {
+                    "Name": "nbElements",
+                    "Value": "384"
+                },
+                {
+                    "Name": "nbFrames",
+                    "Value": "2"
+                },
+                {
+                    "Name": "timeFreq",
+                    "Value": "ABUFF_FORMAT_TIME"
+                },
+                {
+                    "Name": "bufferType",
+                    "Value": "ABUFF_FORMAT_FIXED16"
+                },
+                {
+                    "Name": "interleaved",
+                    "Value": "ABUFF_FORMAT_INTERLEAVED"
+                },
+                {
+                    "Name": "variable",
+                    "Value": "SysOut_codec_ADC"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_6",
+                            "InstanceNameDst": "mono2stereo-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RefElement": "mono2stereo",
+            "InstanceName": "mono2stereo-1",
+            "Description": "mono2stereo-1",
+            "Meta": "{'PosX':'1434','PosY':'739','expanded':true}",
+            "Params": [
+                {
+                    "Name": "balance",
+                    "Value": "0.0"
+                }
+            ],
+            "PinDefIn": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_5",
+                            "InstanceNameDst": "mix-1",
+                            "PinDst": 0
+                        }
+                    ]
+                }
+            ],
+            "PinDefOut": [
+                {
+                    "Cnx": [
+                        {
+                            "Name": "cnx_6",
+                            "InstanceNameDst": "SysOut-Codec-DAC-1",
+                            "PinDst": 0,
+                            "Params": [
+                                {
+                                    "Name": "bufferType",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "timeFreq",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbElements",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "fs",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbChannels",
+                                    "Value": "2"
+                                },
+                                {
+                                    "Name": "interleaved",
+                                    "Value": "NO_CHANGE"
+                                },
+                                {
+                                    "Name": "nbFrames",
+                                    "Value": "NO_CHANGE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Meta": "{'TranslateX':-167.7587412587411,'TranslateY':-57.51981351981356,'Zoom':0.6000000000000001}",
+    "Signature": "Instance",
+    "Version": "v1.6.3",
+    "Editable": true,
+    "InstanceMax": 128,
+    "ConnectionOutMax": 1,
+    "ConnectionInMax": 1,
+    "ProjectType": "AudioKit"
+}

@@ -1,0 +1,13 @@
+{
+  ".pDescription"    : "AUDIO_ALGO_OPT_STR(\"Midi channel to play\")",
+  ".pControl"        : "AUDIO_ALGO_OPT_STR(\"droplist\")",
+  ".pDefault"        : "\"0\"",
+  ".pName"           : "\"midi_channel\"",
+  ".pCustom"         : "NULL",
+  ".iParamFlag"      : "AUDIO_DESC_PARAM_TYPE_FLAG_DEFINE_KEY",
+  ".varDesc"         : "AUDIO_DESC_PARAM_U8(faust_midi_gen_dynamic_config_t,midi_channel,0U,100U)",
+  ".varType"	     : "uint8_t  midi_channel",
+  ".pKeyValue"       : "tMidiChannel",
+  ".pGlobalCode"     : "static const audio_descriptor_key_value_t tMidiChannel[]={ALGO_KEY_VALUE_STRINGIFY(0),ALGO_KEY_VALUE_STRINGIFY(1),ALGO_KEY_VALUE_STRINGIFY(2),ALGO_KEY_VALUE_STRINGIFY(3),ALGO_KEY_VALUE_STRINGIFY(4),ALGO_KEY_VALUE_STRINGIFY(5),ALGO_KEY_VALUE_STRINGIFY(6),ALGO_KEY_VALUE_STRINGIFY(7),ALGO_KEY_VALUE_STRINGIFY(8),ALGO_KEY_VALUE_STRINGIFY(9),{0}}"
+}
+
