@@ -143,7 +143,7 @@ The BLE speaker uses a dedicated printed board called *PCB Speaker revision B* t
 * Optional programming connectors on bottom layer
 * Cost effective BOM
 
-<img src="Utilities/Media/pcb.png" alt="drawing" width="800" style="background-color:#E8E8E9;"/>
+<img src="Utilities/Media/PCB.png" alt="drawing" width="800" style="background-color:#E8E8E9;"/>
 
 In this architecture, the ST32WBA55 handle the main application and is mastering power supplies, fuel gauge, audio codec and STM32H5 using the I²C bus. 
 It is important to notice that the Bluetooth&reg; Isochronous link brings a constraint on the audio data rate, thus, the STM32WBA also outputs the audio master clock to all digital component of the audio chain. 
